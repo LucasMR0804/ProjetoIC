@@ -25,12 +25,12 @@ def generate_response(prompt):
 st.title("Chatbot com Streamlit e OpenAI")
 
 # Adicionar um campo de texto para a pergunta do usuário
-pergunta_usuario = input("Faça uma pergunta ao chatbot:")
+pergunta_usuario = st.text_input("Faça uma pergunta ao chatbot:")
 
 # Verificar se a pergunta foi feita e obter a resposta
 if pergunta_usuario:
     resposta_chatbot = generate_response(pergunta_usuario)
-    print(resposta_chatbot)
+    st.write(resposta_chatbot)
 
 # Adicionar uma seção de informações
 st.info("Este é um chatbot simples usando Streamlit e OpenAI GPT-3.5.")

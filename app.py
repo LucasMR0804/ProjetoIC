@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1uIxwtzJjAQvPuaC4WH9EK3vAIImrnMKr
 """
 import streamlit as st
+import openai
 from openai import OpenAI
 
 # Configurar a chave da API da OpenAI

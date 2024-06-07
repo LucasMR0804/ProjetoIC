@@ -14,12 +14,12 @@ openai.api_key = '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'
 
 # Função para obter a resposta da OpenAI GPT-3.5
 def generate_response(prompt):
-    response = openai.Completion.create(
-        engine="text-davinci-003",  # Escolha o modelo adequado para sua aplicação
-        prompt=prompt,
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",  # Escolha o modelo adequado para sua aplicação
+        messages=[{"role": "system", "content": "Hello, how can I help you today?"}, {"role": "user", "content": prompt}],
         max_tokens=100
     )
-    return response.choices[0].text.strip()
+    return response["choices"][0]["message"]["content"].strip()
 
 # Configurar a página do Streamlit
 st.title("Chatbot com Streamlit e OpenAI")

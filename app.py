@@ -7,19 +7,20 @@ Original file is located at
     https://colab.research.google.com/drive/1uIxwtzJjAQvPuaC4WH9EK3vAIImrnMKr
 """
 import streamlit as st
-import openai
+from openai import OpenAI
 
 # Configurar a chave da API da OpenAI
 openai.api_key = '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'
 
 # Função para obter a resposta da OpenAI GPT-3.5
+client = OpenAI()
 def generate_response(prompt):
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # Escolha o modelo adequado para sua aplicação
-        messages=[{"role": "system", "content": "Hello, how can I help you today?"}, {"role": "user", "content": prompt}],
-        max_tokens=100
+    stream = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": prompt}],
+        stream=True,
     )
-    return response["choices"][0]["message"]["content"].strip()
+    return stream["choices"][0]["message"]["content"].strip()
 
 # Configurar a página do Streamlit
 st.title("Chatbot com Streamlit e OpenAI")

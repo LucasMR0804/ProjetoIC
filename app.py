@@ -9,6 +9,7 @@ Original file is located at
 import os
 import streamlit as st
 import openai
+from openai import OpenAI
 
 # Configurar a chave da API da OpenAI usando a variável de ambiente
 openai.api_key = os.getenv('OPENAI_API_KEY')

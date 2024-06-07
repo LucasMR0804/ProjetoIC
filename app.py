@@ -14,7 +14,7 @@ from openai import OpenAI
 openai.api_key = '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'
 
 # Função para obter a resposta da OpenAI GPT-3.5
-client = OpenAI()
+client = OpenAI(openai.api_key)
 def generate_response(prompt):
     stream = client.chat.completions.create(
         model="gpt-4",

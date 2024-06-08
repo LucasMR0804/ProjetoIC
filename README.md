@@ -1,4 +1,4 @@
-# ProjetoIC
+# Projeto IC
 # Passos para utilização dessa aplicação:
 
 Esta é uma aplicação de exemplo utilizando Streamlit, LangChain e OpenAI para busca e análise de documentos.

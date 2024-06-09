@@ -36,4 +36,4 @@ Esta é uma aplicação de exemplo utilizando Streamlit, LangChain e OpenAI para
 
 Para executar a aplicação, use o Streamlit:
 ```bash
-streamlit run app.py
+streamlit run project_final.py
